@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:linear-gradient(to right,#ccc,#f00,#00f);
+        }
+        .tbl{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            padding:15px;
+            box-shadow:rgba(0,0,0,0.5) 0px 20px 70px 4px;
+        }
+        input[type="button"]
+        {
+            color:rgb(20, 19, 19);
+            cursor:pointer;
+            background-color:#fff;
+            padding:20px;
+            width:100%;
+            margin:10px;
+            outline:0;
+            border:1px solid #ccc;
+            
+        }
+        input[type="text"]
+        {
+            padding:20px 16px;
+            right:0;
+            width:100%;
+            border:1px solid #ccc;
+            margin:10px;
+        }
+        #clear{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <table class="tbl">
+        <tr>
+           <td colspan="3"><input type="text" id="result"></td>
+           <td><input type="button" value="C" onclick="clr()" id="clear"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="Num('1')"></td>
+            <td><input type="button" value="2" onclick="Num('2')"></td>
+            <td><input type="button" value="3" onclick="Num('3')"></td>
+            <td><input type="button" value="/" onclick="Num('/')"></tr>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="Num('4')"></td>
+            <td><input type="button" value="5" onclick="Num('5')"></td>
+            <td><input type="button" value="6" onclick="Num('6')"></td>
+            <td><input type="button" value="-" onclick="Num('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="Num('7')"></td>
+            <td><input type="button" value="8" onclick="Num('8')"></td>
+            <td><input type="button" value="9" onclick="Num('9')"></td>
+            <td><input type="button" value="+" onclick="Num('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." onclick="Num('.')"></td>
+            <td><input type="button" value="0" onclick="Num('0')"></td>
+            <td><input type="button" value="=" onclick="equal()"></td>
+            <td><input type="button" value="*" onclick="Num('*')"></td>
+        </tr>
+    </table>
+    <script>
+        function Num(value){
+document.getElementById("result").value += value;
+        }
+        function equal()
+        {
+let input=document.getElementById("result").value;
+let output=eval(input);
+document.getElementById("result").value=output;
+        }
+        function clr()
+        {
+         document.getElementById("result").value="";
+        }
+    </script>
+</body>
+</html>
